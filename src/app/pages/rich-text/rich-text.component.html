@@ -1,5 +1,10 @@
-<h1>Implementación SimpleMDE</h1>
-<br>
-<textarea [appSimpleMde]>
-
-</textarea>
+<div class="container">
+    <form #contenidoForm (submit)="save()">
+        <h1>Implementación SimpleMDE</h1>
+        <br>
+        <!-- Recibe la directiva, el contenido, y el evento output que obtiene el contenido -->
+        <textarea [appSimpleMde] [contenido]="this.contenido" (contenidoOut)="obtenerContenido($event)">
+        </textarea>
+        <button class="btn" type="submit">Guardar</button>
+    </form>    
+</div>

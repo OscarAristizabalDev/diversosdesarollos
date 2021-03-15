@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 declare const jQuery;
 
@@ -9,17 +9,26 @@ declare const jQuery;
 })
 export class RichTextComponent implements OnInit {
 
+    // Variable con el contenido inicial
+    contenido = 'Contenido inicial';
 
-    constructor() { }
+    constructor() {}
 
-    ngOnInit(): void {
-        /**jQuery(document).ready(function () {
-            jQuery('#richtext').richText({
-                bold: false,
-                italic: false,
-                underline: true
-            });
-        });*/
+    ngOnInit(): void {}
+
+    /**
+     * Función para guardar la información del SimpleMDE
+     */
+    save(){
+        console.log(this.contenido);
+    }
+
+    /**
+     * Permite obtener los cambios en el SimpleMDE cada vez que hay cambios
+     * @param contenido 
+     */
+    obtenerContenido(contenido){
+        this.contenido = contenido;
     }
 
 }
